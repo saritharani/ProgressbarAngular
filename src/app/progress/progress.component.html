@@ -1,0 +1,25 @@
+<div class="progressDiv">
+	<div class="progressDivInner">
+		<h2>Progress Bar Demo </h2>
+		<form class="text-center">
+			<div *ngFor="let bar of bars; let i=index;">
+				<div class="progress">
+					<div id="dynamic" class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0"
+						aria-valuemax="100" [style.width]="bar.value + '%'" [style.background-color]="bar.color">
+						<span id="current-progress">{{bar.value}}%</span>
+					</div>
+				</div>
+			</div>
+			<div class="flexRow">
+				<select (change)="selectProgress($event)">
+					<option *ngFor="let bar of bars; let i=index;" [value]="bar.id">{{bar.name}}</option>
+				</select>
+
+				<div class="form-check form-check-inline" *ngFor="let button of buttons; let i=index;">
+					<input class="form-check-input" type="button" (click)="buttonProgress(button.value)"
+						[id]="button.id" [value]="button.value">
+				</div>
+			</div>
+		</form>
+	</div>
+</div>

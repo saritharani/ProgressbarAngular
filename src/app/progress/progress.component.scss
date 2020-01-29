@@ -1,0 +1,80 @@
+$backColor: #353535;
+$whiteBG: #fff;
+$border-r-0: 0;
+$colorBlk: #000;
+$progessFont: 17px;
+$flexDisplay: flex;
+$margin-0: 0;
+$buttonBg: #e8e8e8;
+$height100: 100vh;
+$posAbs: absolute;
+$posRel: relative;
+
+
+.progressDiv{
+    background:$backColor;
+    height: $height100;
+}
+.progressDivInner{
+    background: $whiteBG;
+    padding: 30px 50px;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    box-sizing: border-box;
+}
+.flexRow{
+    display: $flexDisplay;
+}
+.flexRow .form-check {
+    margin: $margin-0;
+}
+.flexRow select, .flexRow input {
+    padding: 3px;
+    background: $buttonBg;
+    border: 1px solid #7d7d7d;
+    font-size: 13px;
+    margin-right: 10px;
+    color: #222;
+}
+.flexRow input {
+    width: 30px;
+}
+
+.progress {
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 1px solid #bdbdbd;
+    background: $whiteBG;
+    height: 40px;
+    border-radius: $border-r-0;
+    font-weight: 500;
+    position: $posRel;
+  }
+  div#dynamic{
+    height: 40px;
+    -webkit-transition-timing-function: linear;
+    transition: width 2s;
+  }
+  .progress span#current-progress {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    color: $colorBlk;
+    font-size: $progessFont;
+    padding: 10px 0;
+}
+.progressDivInner h2 {
+    margin-bottom: 20px;
+    font-size: 26px;
+    font-weight: 600;
+}
+
+@media (max-width:420px){
+.progressDivInner {
+    width: 90%;
+    padding: 30px 20px;
+}
+}
